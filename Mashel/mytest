@@ -1,0 +1,27 @@
+function myFunction() {
+    console.log("Hello, world!");
+}
+
+myFunction(); // Calls the function
+
+console.log(sum(5, 5));       // ✅ Works fine due to hoisting
+console.log(multiply(5, 5));  // ❌ Throws an error (Cannot access 'multiply' before initialization)
+
+function sum(a, b) {
+    return a + b;
+}
+
+const multiply = function (a, b) {
+    return a * b;
+};
+
+function sum(a, b) {
+    return a + b;
+}
+
+const multiply = function (a, b) {
+    return a * b;
+};
+
+console.log(sum(5, 5));       // ✅ 10
+console.log(multiply(5, 5));  // ✅ 25
