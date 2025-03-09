@@ -1,27 +1,20 @@
+// Function declarations are hoisted
 function myFunction() {
     console.log("Hello, world!");
 }
 
-myFunction(); // Calls the function
+myFunction(); // ✅ Calls the function
 
-console.log(sum(5, 5));       // ✅ Works fine due to hoisting
-console.log(multiply(5, 5));  // ❌ Throws an error (Cannot access 'multiply' before initialization)
-
+// Function declaration — hoisted
 function sum(a, b) {
     return a + b;
 }
 
+console.log(sum(5, 5)); // ✅ 10
+
+// Function expression — not hoisted
 const multiply = function (a, b) {
     return a * b;
 };
 
-function sum(a, b) {
-    return a + b;
-}
-
-const multiply = function (a, b) {
-    return a * b;
-};
-
-console.log(sum(5, 5));       // ✅ 10
-console.log(multiply(5, 5));  // ✅ 25
+console.log(multiply(5, 5)); // ✅ 25
